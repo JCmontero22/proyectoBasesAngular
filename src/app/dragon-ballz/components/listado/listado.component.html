@@ -1,0 +1,13 @@
+<h4 class="text-center">Listado</h4>
+<div class="contentListado">
+    <ul class="listado">
+        <li *ngFor="let character of characterList; let index = index; let firts = first; let last = last; let pares = even; let impares =  odd">
+            <span class="text-primary"></span>{{ index + 1 }}<span> {{ character.nombre }}</span> - <strong> Poder: {{ character.poder }} </strong>
+            <!-- <span>Es el primero: {{ firts }}</span>
+            <span> Es el ultimo: {{ last }}</span> -->
+
+            <!-- <span> Es el ultimo: {{ index === characterList.length -1 }}</span> -->
+        </li>
+
+    </ul>
+</div>

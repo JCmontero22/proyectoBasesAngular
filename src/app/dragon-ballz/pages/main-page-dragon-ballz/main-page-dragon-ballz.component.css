@@ -1,0 +1,12 @@
+
+.alinear{
+    display: flex;
+    justify-content: center;
+}
+.contentAgregar{
+    width: 50%;
+}
+
+.contentListado{
+  width: 50%;
+}
