@@ -1,12 +1,16 @@
 <h4 class="text-center">Listado</h4>
 <div class="contentListado">
     <ul class="listado">
-        <li *ngFor="let character of characterList; let index = index; let firts = first; let last = last; let pares = even; let impares =  odd">
-            <span class="text-primary"></span>{{ index + 1 }}<span> {{ character.nombre }}</span> - <strong> Poder: {{ character.poder }} </strong>
-            <!-- <span>Es el primero: {{ firts }}</span>
-            <span> Es el ultimo: {{ last }}</span> -->
+        <li *ngFor="let character of characterList; let index = index; let firts = first; let last = last; let pares = even; let impares =  odd" class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="text-primary"></span>{{ index + 1 }}<span> {{ character.nombre }}</span> - <strong> Poder: {{ character.poder }} </strong>
+            </div>
 
-            <!-- <span> Es el ultimo: {{ index === characterList.length -1 }}</span> -->
+            <button class="btn btn-danger" (click)="eliminarPersonajeID(character.id)">X</button>
+            <!-- <span>Es el primero: {{ firts }}</span>
+            <span> Es el ultimo: {{ last }}</span>
+
+            <span> Es el ultimo: {{ index === characterList.length -1 }}</span> -->
         </li>
 
     </ul>

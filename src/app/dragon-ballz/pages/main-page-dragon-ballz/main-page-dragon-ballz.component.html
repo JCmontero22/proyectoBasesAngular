@@ -6,13 +6,13 @@
 <div class="row">
     <div class="col alinear">
         <div class="contentListado">
-          <app-listado-dragonBallz [characterList]="chararters"></app-listado-dragonBallz>
+          <app-listado-dragonBallz [characterList]="chararter" (eliminarPerosnajeId)="eliminar($event)"></app-listado-dragonBallz>
         </div>
     </div>
 
     <div class="col alinear">
         <div class="contentAgregar">
-          <app-agregar-personaje></app-agregar-personaje>
+          <app-agregar-personaje (agregarPersonaje)="agregar($event)"></app-agregar-personaje>
 
         </div>
     </div>

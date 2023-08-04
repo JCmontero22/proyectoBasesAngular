@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Chararter } from '../../interface/character.interface';
+import { DbzService } from '../../services/dbz.service';
 
 @Component({
   selector: 'app-main-page-dragon-ballz',
@@ -7,16 +8,17 @@ import { Chararter } from '../../interface/character.interface';
   styleUrls: ['./main-page-dragon-ballz.component.css']
 })
 export class MainPageDragonBallzComponent {
-    @Input()
+    constructor(public DbzService: DbzService){};
 
-    public chararters: Chararter[] = [
-        {
-            nombre: 'Krillin',
-            poder: 100
-        },
-        {
-            nombre: 'Goku',
-            poder: 9500
-        }
-    ];
+    get chararter():Chararter[]{
+        return [... this.DbzService.chararters];
+    };
+
+    eliminar(id: string):void{
+        this.DbzService.eliminarPersonajeID(id);
+    }
+
+    agregar(personaje: Chararter):void{
+        this.DbzService.agregarPersonajes(personaje);
+    }
 }

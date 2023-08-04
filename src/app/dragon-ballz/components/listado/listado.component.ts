@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Chararter } from '../../interface/character.interface';
 
 @Component({
@@ -10,9 +10,30 @@ export class ListadoComponent {
 
     @Input()
     public characterList: Chararter[] = [
-        /* {
-          nombre: 'Trunks',
-          poder: 2500
-        } */
+        {
+          nombre: '',
+          poder: 0
+        }
     ];
+
+    @Output()
+    public eliminarPerosnajeId: EventEmitter<string> = new EventEmitter;
+
+    /* elimianrPersonaje(idPersonaje: number): void{
+        if (idPersonaje != null) {
+            this.eliminarPerosnajeId.emit(idPersonaje);
+        }
+    } */
+
+    eliminarPersonajeID(id?: string):void{
+        console.log(id);
+
+        if (!id) {
+            return;
+        }else{
+            this.eliminarPerosnajeId.emit(id);
+        }
+    }
+
+
 }
