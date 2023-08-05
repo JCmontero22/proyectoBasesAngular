@@ -8,7 +8,7 @@ import { DbzService } from '../../services/dbz.service';
   styleUrls: ['./main-page-dragon-ballz.component.css']
 })
 export class MainPageDragonBallzComponent {
-    constructor(public DbzService: DbzService){};
+    constructor(private DbzService: DbzService){};
 
     get chararter():Chararter[]{
         return [... this.DbzService.chararters];
